@@ -1,4 +1,4 @@
-import { Link, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import CategoryBar from "./CategoryBar";
 
 export default function Home() {
@@ -6,7 +6,6 @@ export default function Home() {
         <div>
             <h1>Estore</h1>
             <CategoryBar/>
-            <Link to={"category/2"}>go to 2</Link>
             <Outlet/>
         </div>
     )

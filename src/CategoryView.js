@@ -8,7 +8,7 @@ export default function CategoryView() {
 
     useEffect(() => {
         setProducts([])
-        fetch('https://dummyjson.com/products/category/' + id)
+        fetch("https://dummyjson.com/products/category/" + id)
         .then(res => res.json())
         .then(json => setProducts(json.products))
     }, [setProducts, id])
