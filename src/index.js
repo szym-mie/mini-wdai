@@ -6,7 +6,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import Home from './Home';
-import Category from './Category';
+import CategoryView from './CategoryView';
 
 const router = createBrowserRouter([
   {
@@ -14,9 +14,7 @@ const router = createBrowserRouter([
     element: <Home />,
     children: [{
       path: "category/:id",
-      element: <Category />
-    }, {
-      path: "product/:id"
+      element: <CategoryView />
     }]
   },
 ]);
