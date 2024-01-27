@@ -1,17 +1,15 @@
-import { useEffect, useState } from "react"
-import { useParams } from "react-router-dom"
+import { useLoaderData } from "react-router-dom"
 
 export default function ProductView() {
-    const { id } = useParams()
-    const [product, setProduct] = useState({})
-
-    useEffect(() => {
-        fetch("https://dummyjson.com/products/" + id)
-        .then(res => res.json())
-        .then(json => setProduct(json))
-    }, [setProduct, id])
+    const { title } = useLoaderData()
 
     return (
-        <div>{product.title}</div>
+        <div>{title}</div>
     )
+}
+
+export async function productLoader({ params }) {
+    const res = await fetch("https://dummyjson.com/products/" + params.id)
+    const json = await res.json()
+    return json
 }

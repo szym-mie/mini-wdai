@@ -5,19 +5,24 @@ import {
     RouterProvider,
 } from "react-router-dom"
 import Home from "./Home"
-import CategoryView from "./CategoryView"
-import ProductView from "./ProductView"
+import CategoryView, { categoryLoader } from "./CategoryView"
+import ProductView, { productLoader } from "./ProductView"
 
 const router = createBrowserRouter([
     {
         path: "/",
+        id: "home",
         element: <Home />,
         children: [{
             path: "category/:id",
-            element: <CategoryView />
+            id: "category",
+            element: <CategoryView />,
+            loader: categoryLoader
         }, {
             path: "product/:id",
-            element: <ProductView />
+            id: "product",
+            element: <ProductView />,
+            loader: productLoader
         }]
     },
 ])
