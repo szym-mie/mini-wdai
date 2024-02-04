@@ -65,7 +65,7 @@ def protected():
 
 @app.route("/", methods=["GET"])
 def root():
-    return ""
+    return app.send_static_file('index.html')
 
 
 if __name__ == "__main__":
